@@ -1,0 +1,106 @@
+---
+
+---
+<section class="hero">
+    <div class="text-content">
+        <h1 class="name">Fata Adzaky Muhammad</h1>
+        <p class="tagline">Siswa RPL dengan passion di Web & Mobile Development.</p>
+        <p class="intro">
+            Membangun aplikasi fungsional dengan pengalaman pengguna yang baik. Siap berkontribusi dan belajar di dunia industri melalui program PKL.
+        </p>
+        <div class="social-links">
+            <a href="https://github.com/clownface471" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/fata-adzaky-muhammad-02a472324/" target="_blank">LinkedIn</a>
+            <a href="mailto:clownface471@gmail.com">Email</a>
+        </div>
+    </div>
+    <div class="image-content">
+        <img src="/images/profile.jpg" alt="Foto Fata Adzaky Muhammad" class="profile-img"/>
+    </div>
+</section>
+
+<style>
+    .hero {
+        display: flex;
+        flex-direction: column-reverse; 
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+        padding: 4rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .text-content {
+        max-width: 550px;
+    }
+
+    .name {
+        font-size: 3.5rem; 
+        font-weight: 800; 
+        margin-bottom: 0.5rem;
+        background: linear-gradient(30deg, #8A2BE2, #FF1493, #00BFFF);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .tagline {
+        font-size: 1.25rem;
+        color: #ccc;
+        margin: 0;
+    }
+
+    .intro {
+        margin: 1.5rem 0;
+        line-height: 1.7;
+        color: #a0a0a0;
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .social-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 0.75rem 1.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 999px;
+        transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+        background-color: white;
+        color: #13151a;
+        border-color: white;
+        transform: translateY(-3px);
+    }
+
+    .image-content {
+        width: 180px;
+        height: 180px;
+    }
+
+    .profile-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%; 
+        border: 4px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    @media (min-width: 768px) {
+        .hero {
+            flex-direction: row; 
+            text-align: left;
+            gap: 4rem;
+        }
+        .social-links {
+            justify-content: flex-start;
+        }
+    }
+</style>
