@@ -1,11 +1,157 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const PROJECTS = [
+    {
+        title: "SMK-IT Portofolio (Laravel)",
+        description: "Aplikasi web manajemen portofolio untuk siswa SMK. Dibangun dengan Laravel, Tailwind CSS, dan MySQL. Memiliki fitur CRUD, sistem role (admin/siswa), dan review proyek.",
+        githubUrl: "https://github.com/clownface471/smkit-portofolio",
+        imageUrl: "/images/project-smkit.png" 
+    },
+    {
+        title: "Dunia Kopi (Flutter E-commerce)",
+        description: "Aplikasi mobile e-commerce MVP untuk kedai kopi. Dibuat menggunakan Flutter dan Firebase (Authentication, Firestore) sebagai backend.",
+        githubUrl: "https://github.com/clownface471/dunia-kopi",
+        imageUrl: "/images/project-kopi.png" 
+    },
+    {
+        title: "Myop-Myup (Flutter Note Taking)",
+        description: "Aplikasi catatan cerdas dengan integrasi AI untuk membuat rangkuman. Menggunakan GetX, Firebase, dan Google Generative AI.",
+        githubUrl: "https://github.com/clownface471/final-project-sanbercode", 
+        imageUrl: "/images/project-myop.png" 
+    },
+    {
+        title: "FitGo (Flutter Fitness App)",
+        description: "Aplikasi mobile untuk mencatat progres latihan dan menyediakan rencana latihan. Dibangun dengan Flutter dan data lokal dari file JSON.",
+        githubUrl: "https://github.com/clownface471/fitgo",
+        imageUrl: "/images/project-fitgo.png" 
+    }
+];
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Fata Adzaky Muhammad - Web & Mobile Developer">
+    <main class="container">
+        <header class="hero">
+            <h1 class="name">Fata Adzaky Muhammad</h1>
+            <p class="tagline">Siswa RPL dengan passion di Web & Mobile Development.</p>
+            <p class="intro">
+                Fokus pada pembuatan aplikasi yang fungsional dan memberikan pengalaman
+                pengguna yang baik. Saat ini sedang mencari kesempatan PKL untuk
+                berkontribusi dan belajar lebih banyak di dunia industri.
+            </p>
+        </header>
+
+        <section class="projects">
+            <h2>Proyek Unggulan</h2>
+            <p class="section-intro">
+                Berikut adalah beberapa proyek yang telah saya kerjakan. Klik untuk melihat kode di GitHub.
+            </p>
+            <div class="project-list">
+                {PROJECTS.map((project) => (
+                    <div class="project-card">
+                        <h3>{project.title}</h3>
+                        <p>{project.description}</p>
+                        <a href={project.githubUrl} target="_blank">Lihat di GitHub &rarr;</a>
+                    </div>
+                ))}
+            </div>
+        </section>
+
+        <footer class="contact">
+            <h2>Hubungi Saya</h2>
+            <p>
+                Tertarik untuk berkolaborasi atau sekadar menyapa? <br />
+                Anda bisa menghubungi saya melalui email di <a href="mailto:clownface471@gmail.com">clownface471@gmail.com</a> atau kunjungi profil profesional saya.
+            </p>
+            <div class="social-links">
+                <a href="https://github.com/clownface471" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/gregorius-memento-mori-5b0833315/" target="_blank">LinkedIn</a>
+            </div>
+        </footer>
+    </main>
 </Layout>
+
+<style>
+    .container {
+        max-width: 800px;
+        margin: auto;
+    }
+    .hero {
+        text-align: center;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .name {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+    .tagline {
+        font-size: 1.25rem;
+        color: #ccc;
+        margin-top: 0;
+    }
+    .intro {
+        max-width: 600px;
+        margin: 1rem auto;
+        line-height: 1.6;
+    }
+    .projects,
+    .contact {
+        padding-top: 3rem;
+        text-align: center;
+    }
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    .section-intro {
+        color: #ccc;
+        margin-bottom: 3rem;
+    }
+    .project-list {
+        display: grid;
+        gap: 1.5rem;
+        text-align: left;
+    }
+    .project-card {
+        background-color: rgba(255, 255, 255, 0.05);
+        padding: 1.5rem;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: transform 0.2s ease-in-out;
+    }
+    .project-card:hover {
+        transform: translateY(-5px);
+    }
+    .project-card h3 {
+        margin-top: 0;
+        font-size: 1.5rem;
+    }
+    .project-card a {
+        color: rgb(var(--accent-light));
+        text-decoration: none;
+        font-weight: 600;
+    }
+    .contact a {
+        color: rgb(var(--accent-light));
+    }
+    .social-links {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .social-links a {
+        text-decoration: none;
+        font-weight: 600;
+        padding: 0.5rem 1rem;
+        border: 1px solid rgb(var(--accent-light));
+        border-radius: 999px;
+        transition: all 0.2s ease;
+    }
+    .social-links a:hover {
+        background-color: rgb(var(--accent-light));
+        color: #131a1a;
+    }
+</style>
