@@ -4,43 +4,52 @@ interface Props {
     description: string;
     githubUrl: string;
     imageUrl: string;
-    tags: string[]; 
+    tags: string[];
 }
 
 const { title, description, githubUrl, imageUrl, tags } = Astro.props;
 ---
-<div class="card">
-    <div class="image-container">
-        <img src={imageUrl} alt={`Screenshot dari ${title}`} loading="lazy" />
-    </div>
-    <div class="content">
-        <h3>{title}</h3>
-        <p>{description}</p>
-        <div class="tags">
-            {tags.map(tag => <span class="tag">{tag}</span>)}
+<a href={githubUrl} class="card-link" target="_blank">
+    <div class="card">
+        <div class="image-container">
+            <img src={imageUrl} alt={`Screenshot dari ${title}`} loading="lazy" />
         </div>
-        <a href={githubUrl} class="link" target="_blank">
-            Lihat Kode di GitHub &rarr;
-        </a>
+        <div class="content">
+            <h3>{title}</h3>
+            <p>{description}</p>
+            <div class="tags">
+                {tags.map(tag => <span class="tag">{tag}</span>)}
+            </div>
+            <span class="link">
+                Lihat Kode di GitHub &rarr;
+            </span>
+        </div>
     </div>
-</div>
+</a>
 
 <style>
+    .card-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
     .card {
-        background: rgba(30, 30, 45, 0.5);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
         border-radius: 12px;
         overflow: hidden;
         display: flex;
         flex-direction: column;
+        height: 100%;
         transition: all 0.3s ease;
-        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     }
     .card:hover {
         transform: translateY(-8px) scale(1.02);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        border-color: rgba(var(--accent-light), 0.5);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        border-color: var(--accent-color);
     }
+
     .image-container {
         width: 100%;
         aspect-ratio: 16 / 9;
@@ -55,6 +64,7 @@ const { title, description, githubUrl, imageUrl, tags } = Astro.props;
     .card:hover .image-container img {
         transform: scale(1.05);
     }
+
     .content {
         padding: 1.5rem;
         display: flex;
@@ -64,13 +74,15 @@ const { title, description, githubUrl, imageUrl, tags } = Astro.props;
     .content h3 {
         margin: 0 0 0.75rem;
         font-size: 1.5rem;
+        color: var(--heading-color);
     }
     .content p {
         margin: 0 0 1.5rem;
-        color: #a0a0a0;
+        color: var(--text-color);
         line-height: 1.6;
         flex-grow: 1;
     }
+
     .tags {
         display: flex;
         flex-wrap: wrap;
@@ -78,15 +90,16 @@ const { title, description, githubUrl, imageUrl, tags } = Astro.props;
         margin-bottom: 1.5rem;
     }
     .tag {
-        background: rgba(var(--accent), 0.2);
-        color: rgb(var(--accent-light));
+        background: color-mix(in srgb, var(--accent-color) 20%, transparent);
+        color: var(--accent-color);
         padding: 0.25rem 0.75rem;
         border-radius: 999px;
         font-size: 0.8rem;
         font-weight: 600;
     }
+
     .link {
-        color: white;
+        color: var(--accent-color);
         text-decoration: none;
         font-weight: 600;
         align-self: flex-start;
