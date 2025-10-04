@@ -1,5 +1,8 @@
 ---
+import ThemeToggle from '../components/ThemeToggle.astro';
 import Header from '../components/Header.astro';
+import LanguageToggle from '../components/LanguageToggle.astro';
+import CursorSpotlight from '../components/CursorSpotlight.astro';
 
 interface Props {
     title: string;
@@ -22,6 +25,7 @@ const { title } = Astro.props;
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     </head>
     <body>
+        <CursorSpotlight />
         <Header />
         <slot />
         <script>
@@ -115,6 +119,39 @@ const { title } = Astro.props;
             background-color: color-mix(in srgb, var(--accent-color) 85%, #000);
         }
     }
+
+        body::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none; 
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease-out;
+
+        background: radial-gradient(
+            circle 350px at var(--mouse-x, -1000px) var(--mouse-y, -1000px),
+            var(--spotlight-color),
+            transparent
+        );
+    }
+
+    :root {
+        --spotlight-color: rgba(0, 0, 0, 0.05);
+    }
+    html.dark {
+        --spotlight-color: rgba(255, 255, 255, 0.03);
+    }
+
+    @media (pointer: fine) {
+        body:hover::after {
+            opacity: 1;
+        }
+    }
+
     .hero {
         display: flex;
         flex-direction: column; 
