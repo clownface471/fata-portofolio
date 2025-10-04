@@ -13,6 +13,7 @@
         <div class="social-links">
             <a href="https://github.com/clownface471" target="_blank">GitHub</a>
             <a href="https://www.linkedin.com/in/fata-adzaky-muhammad-02a472324/" target="_blank">LinkedIn</a>
+            <a href="https://clownface.medium.com" target="_blank">Medium</a>
             <a href="mailto:clownface471@gmail.com">Email</a>
         </div>
     </div>
@@ -21,7 +22,7 @@
 <style>
     .hero {
         display: flex;
-        flex-direction: column; 
+        flex-direction: column;
         align-items: center;
         text-align: center;
         gap: 2rem;
@@ -54,6 +55,7 @@
 
     .social-links {
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         gap: 1rem;
         margin-top: 2rem;
@@ -91,7 +93,7 @@
 
     @media (min-width: 768px) {
         .hero {
-            flex-direction: row; 
+            flex-direction: row;
             justify-content: space-between;
             align-items: center;
             text-align: left;
@@ -101,7 +103,7 @@
             justify-content: flex-start;
         }
         .image-content {
-            order: 2; 
+            order: 2;
             width: 280px;
             height: 280px;
             flex-shrink: 0;
