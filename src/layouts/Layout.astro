@@ -1,5 +1,5 @@
 ---
-import ThemeToggle from '../components/ThemeToggle.astro';
+import Header from '../components/Header.astro';
 
 interface Props {
     title: string;
@@ -22,7 +22,7 @@ const { title } = Astro.props;
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     </head>
     <body>
-        <ThemeToggle />
+        <Header />
         <slot />
         <script>
             const animatedElements = document.querySelectorAll('[data-animated]');
@@ -67,6 +67,7 @@ const { title } = Astro.props;
 
     body {
         margin: 0;
+        padding-top: 5rem;
     }
 
     h1, h2, h3 {
@@ -85,4 +86,169 @@ const { title } = Astro.props;
         opacity: 1;
         transform: translateY(0);
     }
+
+        .main-nav {}
+
+    @media (min-width: 768px) {
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        .main-nav a {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--text-color);
+            transition: color 0.3s ease;
+        }
+        .main-nav a:hover {
+            color: var(--heading-color);
+        }
+        .contact-button {
+            color: var(--bg-color) !important;
+            background-color: var(--accent-color);
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+        }
+        .contact-button:hover {
+            color: var(--bg-color) !important;
+            background-color: color-mix(in srgb, var(--accent-color) 85%, #000);
+        }
+    }
+    .hero {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+        padding: 4rem 0 6rem; 
+        min-height: 70vh;
+        justify-content: center;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .text-content { max-width: 600px; }
+    .name {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--heading-color);
+    }
+    .tagline {
+        font-size: 1.25rem;
+        color: var(--text-color);
+        margin-bottom: 1.5rem;
+    }
+    .intro { line-height: 1.8; }
+    .social-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+    .social-links a {
+        color: var(--accent-color);
+        text-decoration: none;
+        font-weight: 600;
+        padding: 0.75rem 1.5rem;
+        border: 1px solid var(--accent-color);
+        border-radius: 999px;
+        transition: all 0.3s ease;
+    }
+    .social-links a:hover {
+        background-color: var(--accent-color);
+        color: var(--bg-color);
+        transform: translateY(-3px);
+    }
+    .image-content { width: 200px; height: 200px; }
+    .profile-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 6px solid var(--card-bg);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    @media (min-width: 768px) {
+        .hero {
+            flex-direction: row; 
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+            gap: 4rem;
+        }
+        .social-links { justify-content: flex-start; }
+        .image-content { order: 2; width: 280px; height: 280px; flex-shrink: 0; }
+        .text-content { order: 1; }
+        .name { font-size: 4.5rem; }
+    }
+
+    .card-link { text-decoration: none; color: inherit; display: block; }
+    .card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    .card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        border-color: var(--accent-color);
+    }
+    .image-container { width: 100%; aspect-ratio: 16 / 9; overflow: hidden; }
+    .image-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+    .card:hover .image-container img { transform: scale(1.05); }
+    .content { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
+    .content h3 { margin: 0 0 0.75rem; font-size: 1.5rem; color: var(--heading-color); }
+    .content p { margin: 0 0 1.5rem; color: var(--text-color); line-height: 1.6; flex-grow: 1; }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+    .tag {
+        background: color-mix(in srgb, var(--accent-color) 20%, transparent);
+        color: var(--accent-color);
+        padding: 0.25rem 0.75rem;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+    .link { color: var(--accent-color); font-weight: 600; align-self: flex-start; }
+
+x    .projects, .about, .cv-section { padding: 6rem 0; }
+    .projects h2, .about h2, .cv-section h2 {
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    .project-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
+    @media (min-width: 768px) { .project-grid { grid-template-columns: repeat(2, 1fr); } }
+    .about { border-top: 1px solid var(--border-color); }
+    .about-content { max-width: 700px; margin: auto; font-size: 1.125rem; line-height: 1.8; }
+    .cv-section { text-align: center; border-top: 1px solid var(--border-color); }
+    .cv-section p { font-size: 1.125rem; max-width: 500px; margin: 0 auto 2.5rem; line-height: 1.7; }
+    .cv-button {
+        display: inline-block;
+        background-color: var(--accent-color);
+        color: var(--bg-color);
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 1rem 2.5rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+    .cv-button:hover {
+        background-color: color-mix(in srgb, var(--accent-color) 85%, #000);
+        transform: translateY(-4px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .lang-switcher {}
+.lang-switcher button {}
+.lang-switcher button.active {}
+.lang-switcher .separator {}
 </style>

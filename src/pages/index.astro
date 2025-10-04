@@ -1,72 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import ProjectCard from '../components/ProjectCard.astro';
-
-const PROJECTS = [
-    {
-        title: "SMK-IT Portofolio (Laravel)",
-        description: "Aplikasi web manajemen portofolio siswa dengan role admin/siswa. Dibangun dengan Laravel, Tailwind CSS, dan MySQL.",
-        tags: ["Laravel", "PHP", "Tailwind CSS", "MySQL", "Web App"],
-        githubUrl: "https://github.com/clownface471/smkit-portofolio",
-        imageUrl: "/images/project-smkit.png"
-    },
-    {
-        title: "ARCHI note (Flutter AI Notes)",
-        description: "Aplikasi catatan cerdas dengan integrasi Google Generative AI untuk membuat rangkuman otomatis. Menggunakan GetX, Firebase Auth & Firestore.",
-        tags: ["Flutter", "Firebase", "GetX", "Google AI", "Mobile App"],
-        githubUrl: "https://github.com/clownface471/final-project-sanbercode",
-        imageUrl: "/images/project-archi.png"
-    },
-    {
-        title: "Dunia Kopi (Flutter E-commerce)",
-        description: "Aplikasi mobile e-commerce MVP untuk kedai kopi. Dibuat menggunakan Flutter dan Firebase (Authentication, Firestore) sebagai backend.",
-        tags: ["Flutter", "Firebase", "E-commerce", "Mobile App"],
-        githubUrl: "https://github.com/clownface471/dunia-kopi",
-        imageUrl: "/images/project-kopi.png"
-    },
-    {
-        title: "Myop-Myup (Flutter UMKM App)",
-        description: "Aplikasi pencatat penjualan UMKM untuk membantu melacak transaksi. Dibuat dengan Flutter dan GetX.",
-        tags: ["Flutter", "GetX", "State Management", "Mobile App"],
-        githubUrl: "https://github.com/clownface471/final-project-flutter",
-        imageUrl: "/images/project-myop.png"
-    },
-    {
-        title: "FitGo (Flutter Fitness App)",
-        description: "Aplikasi mobile untuk mencatat progres latihan dan menyediakan rencana latihan. Dibangun dengan Flutter dan data lokal dari file JSON.",
-        tags: ["Flutter", "JSON", "UI/UX", "Mobile App"],
-        githubUrl: "https://github.com/clownface471/fitgo",
-        imageUrl: "/images/project-fitgo.png"
-    }
-];
+import { TranslatedContent } from '../components/react/TranslatedContent.jsx';
 ---
-
 <Layout title="Portofolio">
     <main class="container">
-        <Hero data-animated />
-
-        <section class="projects">
-            <h2 data-animated>Proyek Unggulan</h2>
-            <div class="project-grid">
-                {PROJECTS.map(project => (
-                    <ProjectCard 
-                        title={project.title}
-                        description={project.description}
-                        githubUrl={project.githubUrl}
-                        imageUrl={project.imageUrl}
-                        tags={project.tags}
-                        data-animated 
-                    />
-                ))}
-            </div>
-        </section>
-        
-        <section class="cv-section" data-animated>
-            <h2>Tertarik Bekerja Sama?</h2>
-            <p>Lihat riwayat hidup saya untuk detail lebih lanjut mengenai pengalaman dan keahlian saya.</p>
-            <a href="/cv.pdf" class="cv-button" target="_blank">Lihat CV Saya</a>
-        </section>
+        <TranslatedContent client:load />
     </main>
 </Layout>
 
@@ -75,57 +13,5 @@ const PROJECTS = [
         max-width: 1100px;
         margin: auto;
         padding: 0 2rem;
-    }
-    .projects {
-        padding: 6rem 0;
-    }
-    .projects h2 {
-        font-size: 3rem;
-        text-align: center;
-        margin-bottom: 4rem;
-    }
-    .project-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-    }
-
-    .cv-section {
-        padding: 6rem 0;
-        text-align: center;
-        border-top: 1px solid var(--border-color);
-    }
-    .cv-section h2 {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-    }
-    .cv-section p {
-        font-size: 1.125rem;
-        max-width: 500px;
-        margin: 0 auto 2.5rem;
-        line-height: 1.7;
-    }
-    .cv-button {
-        display: inline-block;
-        background-color: var(--accent-color);
-        color: var(--bg-color);
-        text-decoration: none;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 600;
-        font-size: 1rem;
-        padding: 1rem 2.5rem;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-    }
-    .cv-button:hover {
-        background-color: color-mix(in srgb, var(--accent-color) 85%, #000);
-        transform: translateY(-4px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    @media (min-width: 768px) {
-        .project-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
     }
 </style>

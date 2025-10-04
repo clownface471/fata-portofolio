@@ -1,0 +1,25 @@
+---
+import { LanguageSwitcher } from './react/LanguageSwitcher.jsx';
+---
+<LanguageSwitcher client:load />
+
+<style>
+    :global(.lang-switcher) {
+        border: 1px solid var(--border-color);
+        border-radius: 999px;
+        padding: 0.25rem;
+        display: flex;
+        align-items: center;
+    }
+    :global(.lang-switcher button) {
+        background: none; border: none; padding: 0.25rem 0.75rem;
+        cursor: pointer; font-weight: 600; color: var(--text-color);
+        border-radius: 999px; transition: all 0.3s ease;
+    }
+    :global(.lang-switcher button.active) {
+        background-color: var(--accent-color); color: var(--bg-color);
+    }
+    :global(.lang-switcher .separator) {
+        color: var(--border-color);
+    }
+</style>

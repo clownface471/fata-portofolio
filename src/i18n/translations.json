@@ -1,0 +1,40 @@
+{
+    "id": {
+        "nav_projects": "Proyek",
+        "nav_about": "Tentang",
+        "nav_contact": "Kontak",
+        "hero_tagline": "Siswa RPL dengan passion di Web & Mobile Development.",
+        "hero_intro": "Membangun aplikasi fungsional dengan pengalaman pengguna yang baik. Siap berkontribusi dan belajar di dunia industri melalui program PKL.",
+        "projects_title": "Proyek Unggulan",
+        "about_title": "Tentang Saya",
+        "about_p1": "Saya adalah siswa RPL kelas 11 dari Banjarmasin, dengan antusiasme tinggi untuk menciptakan aplikasi yang tidak hanya berfungsi baik, tetapi juga memberikan pengalaman yang berarti. Saya percaya pada kekuatan kode untuk memecahkan masalah dan bercerita.",
+        "about_p2": "Di luar coding, saya memiliki ketertarikan mendalam pada dunia fiksi, baik dalam membaca maupun menuliskannya. Saya juga gemar mengeksplorasi berbagai bentuk kreativitas, yang mendorong saya untuk terus bereksperimen—tidak hanya dalam tulisan, tetapi juga dalam setiap baris kode yang saya buat untuk menemukan solusi yang unik dan efektif.",
+        "cv_title": "Tertarik Bekerja Sama?",
+        "cv_p": "Lihat riwayat hidup saya untuk detail lebih lanjut mengenai pengalaman dan keahlian saya.",
+        "cv_button": "Lihat CV Saya",
+        "project_smkit_desc": "Aplikasi web manajemen portofolio siswa dengan role admin/siswa. Dibangun dengan Laravel, Tailwind CSS, dan MySQL.",
+        "project_archi_desc": "Aplikasi catatan cerdas dengan integrasi Google Generative AI untuk membuat rangkuman otomatis. Menggunakan GetX, Firebase Auth & Firestore.",
+        "project_kopi_desc": "Aplikasi mobile e-commerce MVP untuk kedai kopi. Dibuat menggunakan Flutter dan Firebase (Authentication, Firestore) sebagai backend.",
+        "project_myop_desc": "Aplikasi pencatat penjualan UMKM untuk membantu melacak transaksi. Dibuat dengan Flutter dan GetX.",
+        "project_fitgo_desc": "Aplikasi mobile untuk mencatat progres latihan dan menyediakan rencana latihan. Dibangun dengan Flutter dan data lokal dari file JSON."
+    },
+    "en": {
+        "nav_projects": "Projects",
+        "nav_about": "About",
+        "nav_contact": "Contact",
+        "hero_tagline": "An 11th-grade Software Engineering student with a passion for Web & Mobile Development.",
+        "hero_intro": "Focused on building functional applications with a great user experience. Currently seeking an internship opportunity to contribute and learn more in the professional industry.",
+        "projects_title": "Featured Projects",
+        "about_title": "About Me",
+        "about_p1": "I am an 11th-grade Software Engineering student from Banjarmasin, with a high enthusiasm for creating applications that not only function well but also provide meaningful experiences. I believe in the power of code to solve problems and tell stories.",
+        "about_p2": "Outside of coding, I have a deep interest in the world of fiction, both in reading and writing it. I also enjoy exploring various forms of creativity, which drives me to constantly experiment—not just in writing, but also in every line of code I create to find unique and effective solutions.",
+        "cv_title": "Interested in Collaborating?",
+        "cv_p": "Check out my curriculum vitae for more details about my experience and skills.",
+        "cv_button": "View My CV",
+        "project_smkit_desc": "A web-based portfolio management application for vocational students with admin/student roles. Built with Laravel, Tailwind CSS, and MySQL.",
+        "project_archi_desc": "A smart note-taking application with Google Generative AI integration for automatic summarization. Uses GetX, Firebase Auth & Firestore.",
+        "project_kopi_desc": "An MVP mobile e-commerce application for a coffee shop case study. Built using Flutter and Firebase (Authentication, Firestore) as the backend.",
+        "project_myop_desc": "A sales logging application for micro, small, and medium enterprises (UMKM) to help track transactions. Created with Flutter and GetX.",
+        "project_fitgo_desc": "A mobile application to track workout progress and provide exercise plans. Built with Flutter and local data from a JSON file."
+    }
+}
